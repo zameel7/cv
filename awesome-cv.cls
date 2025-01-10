@@ -608,3 +608,23 @@
   \end{justify}
   \vspace{-4.0mm}
 }
+
+% Define an environment for cvprojects
+\newenvironment{cvprojects}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+
+% Define a project entry
+% Usage: \cvproject{<title>}{<tag>}{<description>}
+\newcommand*{\cvproject}[2]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} \\
+    \multicolumn{2}{L{\textwidth}}{#2}
+  \end{tabular*}%
+}
